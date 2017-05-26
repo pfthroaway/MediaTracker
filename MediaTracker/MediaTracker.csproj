@@ -167,7 +167,7 @@
     <Folder Include="Windows\MediaFilm\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Extensions\Extensions\Extensions.csproj">
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
       <Project>{20f40385-5991-461c-9340-2f5de0e320f4}</Project>
       <Name>Extensions</Name>
     </ProjectReference>
