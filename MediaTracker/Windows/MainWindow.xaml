@@ -18,15 +18,21 @@
                 <Button x:Name="BtnHiatusSeries" Height="40" Margin="0,0,0,10" Click="BtnHiatusSeries_Click">
                     <AccessText>_Hiatus</AccessText>
                 </Button>
+                <Button x:Name="BtnNewSeries" Height="40" Click="BtnNewSeries_Click">
+                    <AccessText>Add _New</AccessText>
+                </Button>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Film" Padding="5">
+        <GroupBox Header="Film" Padding="5" VerticalAlignment="Top">
             <StackPanel>
                 <Button x:Name="BtnReleased" Width="125" Height="40" Margin="0,0,0,10" Click="BtnReleased_Click">
                     <AccessText>_Released</AccessText>
                 </Button>
                 <Button x:Name="BtnUpcoming" Height="40" Margin="0,0,0,10" Click="BtnUpcoming_Click">
                     <AccessText>_Upcoming</AccessText>
+                </Button>
+                <Button x:Name="BtnNewFilm" Height="40" Click="BtnNewFilm_Click">
+                    <AccessText>Add New</AccessText>
                 </Button>
             </StackPanel>
         </GroupBox>

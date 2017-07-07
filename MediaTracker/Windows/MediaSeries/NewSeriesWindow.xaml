@@ -6,6 +6,86 @@
         mc:Ignorable="d"
         Style="{StaticResource WindowStyle}"
         Title="New Series" WindowStartupLocation="CenterScreen" Closed="WindowNewSeries_Closed">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
     <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Name:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Premiere Date:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Rating:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Seasons:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Episodes:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBlock Grid.Column="5" Grid.Row="0" Margin="0,0,10,5">
+            <Run Text="Status:" />
+            <Run Text="*" Foreground="Red" />
+        </TextBlock>
+        <TextBox x:Name="TxtName" Grid.Column="0" Grid.Row="1" Width="200" TextChanged="TxtTextChanged" GotFocus="Txt_GotFocus"  Margin="0,0,10,10" IsTabStop="True" TabIndex="0" />
+        <DatePicker x:Name="DatePremiere" Grid.Column="1" Grid.Row="1" Width="150" MaxWidth="150" SelectedDateChanged="DatePicker_SelectedDateChanged" PreviewKeyDown="Date_PreviewKeyDown" Margin="0,0,10,10" />
+        <TextBox x:Name="TxtRating" Grid.Column="2" Grid.Row="1" Width="60" TextChanged="DecimalTextChanged" GotFocus="Txt_GotFocus" PreviewKeyDown="Decimal_PreviewKeyDown" Margin="0,0,10,10" />
+        <TextBox x:Name="TxtSeasons" Grid.Column="3" Grid.Row="1" Width="60" PreviewKeyDown="Integer_PreviewKeyDown" GotFocus="Txt_GotFocus" TextChanged="IntTextChanged" Margin="0,0,10,10" />
+        <TextBox x:Name="TxtEpisodes" Grid.Column="4" Grid.Row="1" Width="60" PreviewKeyDown="Integer_PreviewKeyDown" TextChanged="IntTextChanged" GotFocus="Txt_GotFocus" Margin="0,0,10,10" />
+        <ComboBox x:Name="CmbStatus" Grid.Column="5" Grid.Row="1" Width="100" SelectionChanged="CmbSelectionChanged" Margin="0,0,10,10">
+            <ComboBoxItem Tag="Airing" Content="Airing" />
+            <ComboBoxItem Tag="Ended" Content="Ended" />
+            <ComboBoxItem Tag="Hiatus" Content="Hiatus" />
+            <ComboBoxItem Tag="Nope" Content="Nope" />
+        </ComboBox>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Channel:" Margin="0,0,10,5" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Finale Date:" Margin="0,0,10,5" />
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="Day:"  Margin="0,0,10,5" />
+        <TextBlock Grid.Column="3" Grid.Row="2" Text="Time:" Margin="0,0,10,5" />
+        <TextBlock Grid.Column="4" Grid.Row="2" Text="Return Date:" Margin="0,0,10,5" />
+        <TextBox x:Name="TxtChannel" Grid.Column="0" Grid.Row="3" Width="200" GotFocus="Txt_GotFocus" Margin="0,0,10,10" />
+        <DatePicker x:Name="DateFinale" Grid.Column="1" Grid.Row="3" Width="150" MaxWidth="150" PreviewKeyDown="Date_PreviewKeyDown" Margin="0,0,10,10" />
+        <ComboBox x:Name="CmbDay" Grid.Column="2" Grid.Row="3" Width="100" Margin="0,0,10,10" />
+        <TextBox x:Name="TxtTime" Grid.Column="3" Grid.Row="3" Width="60" GotFocus="Txt_GotFocus" Margin="0,0,10,10" />
+        <TextBox x:Name="TxtReturnDate" Grid.Column="4" Grid.Row="3" Width="200" GotFocus="Txt_GotFocus" Margin="0,0,10,10" />
+        <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="6" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button x:Name="BtnSaveExit" Width="125" Height="40" IsDefault="True" IsEnabled="False" Margin="0,0,10,0" Click="BtnSaveExit_Click">
+                <AccessText>_Save and Exit</AccessText>
+            </Button>
+            <Button x:Name="BtnSaveNew" Width="125" Height="40" IsEnabled="False" Margin="0,0,10,0" Click="BtnSaveNew_Click">
+                <AccessText>Save and _New</AccessText>
+            </Button>
+            <Button x:Name="BtnReset" Width="80" Height="40" IsEnabled="False" Margin="0,0,10,0" Click="BtnReset_Click">
+                <AccessText>_Reset</AccessText>
+            </Button>
+            <Button x:Name="BtnBack" Width="80" Height="40" IsCancel="True" Click="BtnBack_Click" IsTabStop="True" TabIndex="14">
+                <AccessText>_Back</AccessText>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

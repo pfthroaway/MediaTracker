@@ -1,15 +1,13 @@
 ﻿using Extensions;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SQLite;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using Extensions.DatabaseHelp;
 using Extensions.DataTypeHelpers;
 using MediaTracker.Classes.Enums;
 using MediaTracker.Classes.MediaTypes;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Reflection;
+using System.Threading.Tasks;
 
 namespace MediaTracker.Classes.Database
 {

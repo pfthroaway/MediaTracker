@@ -198,10 +198,7 @@ namespace MediaTracker.Classes.MediaTypes
             return base.GetHashCode() ^ 17;
         }
 
-        public sealed override string ToString()
-        {
-            return Name;
-        }
+        public sealed override string ToString() => Name;
 
         #endregion Override Operators
 

@@ -1,9 +1,6 @@
-﻿using System;
+﻿using MediaTracker.Classes.MediaTypes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using MediaTracker.Classes.MediaTypes;
 
 namespace MediaTracker.Classes.Database
 {

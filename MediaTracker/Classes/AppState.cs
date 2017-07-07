@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Extensions;
-using MediaTracker.Classes.Database;
-using MediaTracker.Classes.Enums;
+﻿using MediaTracker.Classes.Database;
 using MediaTracker.Classes.MediaTypes;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MediaTracker.Classes
 {

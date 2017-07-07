@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MediaTracker.Classes.Enums
+﻿namespace MediaTracker.Classes.Enums
 {
-    /// <summary>Represents the current status of a media.</summary>
+    /// <summary>Represents the current status of a series.</summary>
     internal enum SeriesStatus
     {
+        /// <summary>Series is currently airing.</summary>
         Airing,
+
+        /// <summary>Series has ended.</summary>
         Ended,
+
+        /// <summary>Series is on hiatus.</summary>
         Hiatus,
+
+        /// <summary>Discontinued watching series.</summary>
         Nope
     }
 }

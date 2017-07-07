@@ -23,7 +23,7 @@
             <TextBlock Text="{Binding Path=RatingToString}" FontSize="20" Margin="0,0,0,10" />
             <TextBlock Text="{Binding Path=FinaleDateToString}" FontSize="20" Margin="0,0,0,10" />
         </StackPanel>
-        <ListView x:Name="LVSeries" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Height="500" SelectionChanged="LVSeries_SelectionChanged" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView x:Name="LVSeries" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Height="500" SelectionChanged="LVSeries_SelectionChanged" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Visible" AlternationCount="2">
             <ListView.View>
                 <GridView ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <GridViewColumn Width="300" DisplayMemberBinding="{Binding Path=Name}">

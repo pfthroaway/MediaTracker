@@ -63,7 +63,7 @@ namespace MediaTracker.Windows.MediaSeries
 
         private void LVSeriesColumnHeader_Click(object sender, RoutedEventArgs e)
         {
-            _sort = Functions.ListViewColumnHeaderClick(sender, _sort, LVSeries);
+            _sort = Functions.ListViewColumnHeaderClick(sender, _sort, LVSeries, "#BDC7C1");
         }
 
         private void BtnNewSeries_Click(object sender, RoutedEventArgs e)
@@ -101,10 +101,7 @@ namespace MediaTracker.Windows.MediaSeries
 
         private void LVSeries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (LVSeries.SelectedIndex >= 0)
-                _selectedSeries = (Series)LVSeries.SelectedItem;
-            else
-                _selectedSeries = new Series();
+            _selectedSeries = LVSeries.SelectedIndex >= 0 ? (Series)LVSeries.SelectedItem : new Series();
 
             ToggleButtons(LVSeries.SelectedIndex >= 0);
             RefreshItemsSource();

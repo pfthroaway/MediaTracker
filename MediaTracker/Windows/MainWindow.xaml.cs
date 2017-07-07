@@ -45,5 +45,16 @@ namespace MediaTracker.Windows
         {
             await AppState.LoadAll();
         }
+
+        private void BtnNewSeries_Click(object sender, RoutedEventArgs e)
+        {
+            NewSeriesWindow window = new NewSeriesWindow { PreviousWindow = this };
+            window.Show();
+            Visibility = Visibility.Hidden;
+        }
+
+        private void BtnNewFilm_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
