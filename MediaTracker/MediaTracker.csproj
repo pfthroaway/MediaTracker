@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Windows\Media.ico</ApplicationIcon>
+    <ApplicationIcon>Pages\Media.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -76,23 +76,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\MediaSeries\EndedWindow.xaml.cs">
-      <DependentUpon>EndedWindow.xaml</DependentUpon>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MediaSeries\HiatusWindow.xaml.cs">
-      <DependentUpon>HiatusWindow.xaml</DependentUpon>
+    <Compile Include="Pages\MediaSeries\AllTelevisionPage.xaml.cs">
+      <DependentUpon>AllTelevisionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MediaSeries\ModifySeriesWindow.xaml.cs">
-      <DependentUpon>ModifySeriesWindow.xaml</DependentUpon>
+    <Compile Include="Pages\MediaSeries\EndedPage.xaml.cs">
+      <DependentUpon>EndedPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MediaSeries\NewSeriesWindow.xaml.cs">
-      <DependentUpon>NewSeriesWindow.xaml</DependentUpon>
+    <Compile Include="Pages\MediaSeries\HiatusPage.xaml.cs">
+      <DependentUpon>HiatusPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Windows\MediaSeries\AiringWindow.xaml">
+    <Compile Include="Pages\MediaSeries\ModifySeriesPage.xaml.cs">
+      <DependentUpon>ModifySeriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MediaSeries\NewSeriesPage.xaml.cs">
+      <DependentUpon>NewSeriesPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MainWindow.xaml">
+    <Page Include="Pages\MediaSeries\AiringPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -106,26 +116,30 @@
     <Compile Include="Classes\Enums\SeriesStatus.cs" />
     <Compile Include="Classes\MediaTypes\Film.cs" />
     <Compile Include="Classes\MediaTypes\Series.cs" />
-    <Compile Include="Windows\MediaSeries\AiringWindow.xaml.cs">
-      <DependentUpon>AiringWindow.xaml</DependentUpon>
+    <Compile Include="Pages\MediaSeries\AiringPage.xaml.cs">
+      <DependentUpon>AiringPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MainWindow.xaml.cs">
+    <Compile Include="Pages\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\MediaSeries\EndedWindow.xaml">
+    <Page Include="Pages\MediaSeries\AllTelevisionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MediaSeries\HiatusWindow.xaml">
+    <Page Include="Pages\MediaSeries\EndedPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MediaSeries\ModifySeriesWindow.xaml">
+    <Page Include="Pages\MediaSeries\HiatusPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\MediaSeries\NewSeriesWindow.xaml">
+    <Page Include="Pages\MediaSeries\ModifySeriesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MediaSeries\NewSeriesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,10 +179,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Windows\Media.ico" />
+    <Folder Include="Pages\MediaFilm\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Windows\MediaFilm\" />
+    <Resource Include="Pages\Media.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />

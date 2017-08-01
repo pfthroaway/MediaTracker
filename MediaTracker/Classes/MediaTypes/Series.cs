@@ -139,13 +139,25 @@ namespace MediaTracker.Classes.MediaTypes
         public string EpisodesToString => Episodes != 0 ? $"Episodes: {Episodes}" : "";
 
         /// <summary>Time the series currently airs, formatted.</summary>
-        public string TimeToString => Time.ToString("hh:mm tt");
+        public string TimeToString => !string.IsNullOrEmpty(Name) && Status == SeriesStatus.Airing || Status == SeriesStatus.Hiatus ? Time.ToString("hh:mm tt") : "";
+
+        /// <summary>Day of week, formatted.</summary>
+        public string DayToString => !string.IsNullOrEmpty(Name) && Status == SeriesStatus.Airing || Status == SeriesStatus.Hiatus ? Day.ToString() : "";
 
         /// <summary>Date the series first aired, formatted to string.</summary>
-        public string PremiereDateToString => PremiereDate != DateTime.MinValue ? $"Premiere: {PremiereDate:yyyy/MM/dd}" : "";
+        public string PremiereDateToString => PremiereDate != DateTime.MinValue ? $"{PremiereDate:yyyy/MM/dd}" : "";
+
+        /// <summary>Date the series first aired, formatted to string, with preceding text.</summary>
+        public string PremiereDateToStringWithText => !string.IsNullOrEmpty(PremiereDateToString) ? $"Premiere: {PremiereDateToString}" : "";
 
         /// <summary>Date the series last aired, formatted to string.</summary>
-        public string FinaleDateToString => FinaleDate != DateTime.MinValue ? $"Premiere: {FinaleDate:yyyy/MM/dd}" : "";
+        public string FinaleDateToString => FinaleDate != DateTime.MinValue && Status == SeriesStatus.Ended ? $"{FinaleDate:yyyy/MM/dd}" : "";
+
+        /// <summary>Date the series last aired, formatted to string, with preceding text.</summary>
+        public string FinaleDateToStringWithText => !string.IsNullOrEmpty(FinaleDateToString) ? $"Finale: {FinaleDateToString}" : "";
+
+        /// <summary>Date the series will return on, with preceding text.</summary>
+        public string ReturnDateWithText => !string.IsNullOrWhiteSpace(ReturnDate) ? $"Returning: {ReturnDate}" : "";
 
         #endregion Helper Properties
 
@@ -167,10 +179,10 @@ namespace MediaTracker.Classes.MediaTypes
             if (ReferenceEquals(null, left) && ReferenceEquals(null, right)) return true;
             if (ReferenceEquals(null, left) ^ ReferenceEquals(null, right)) return false;
             return string.Equals(left.Name, right.Name, StringComparison.OrdinalIgnoreCase) &&
-                   DateTime.Equals(left.Time, right.Time) && left.Rating == right.Rating &&
-                   string.Equals(left.Channel, right.Channel, StringComparison.OrdinalIgnoreCase) &&
-                   string.Equals(left.ReturnDate, right.ReturnDate, StringComparison.OrdinalIgnoreCase) &&
-                   left.Seasons == right.Seasons && left.Episodes == right.Episodes && left.Status == right.Status && left.Day == right.Day && DateTime.Equals(left.PremiereDate, right.PremiereDate) && DateTime.Equals(left.FinaleDate, right.FinaleDate);
+                 DateTime.Equals(left.Time, right.Time) && left.Rating == right.Rating &&
+                 string.Equals(left.Channel, right.Channel, StringComparison.OrdinalIgnoreCase) &&
+                 string.Equals(left.ReturnDate, right.ReturnDate, StringComparison.OrdinalIgnoreCase) &&
+                 left.Seasons == right.Seasons && left.Episodes == right.Episodes && left.Status == right.Status && left.Day == right.Day && DateTime.Equals(left.PremiereDate, right.PremiereDate) && DateTime.Equals(left.FinaleDate, right.FinaleDate);
         }
 
         public sealed override bool Equals(object obj)
