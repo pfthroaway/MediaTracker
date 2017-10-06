@@ -1,4 +1,7 @@
-﻿using MediaTracker.Classes;
+﻿using Extensions;
+using Extensions.DataTypeHelpers;
+using Extensions.Enums;
+using MediaTracker.Classes;
 using MediaTracker.Classes.Enums;
 using MediaTracker.Classes.MediaTypes;
 using System;
@@ -45,15 +48,9 @@ namespace MediaTracker.Pages.MediaSeries
 
         #region Text/Selection Changed
 
-        private void TxtTextChanged(object sender, TextChangedEventArgs e)
-        {
-            CheckButtons();
-        }
+        private void TxtTextChanged(object sender, TextChangedEventArgs e) => CheckButtons();
 
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CheckButtons();
-        }
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e) => CheckButtons();
 
         private void DecimalTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -67,24 +64,15 @@ namespace MediaTracker.Pages.MediaSeries
             CheckButtons();
         }
 
-        private void CmbSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            CheckButtons();
-        }
+        private void CmbSelectionChanged(object sender, SelectionChangedEventArgs e) => CheckButtons();
 
         #endregion Text/Selection Changed
 
         #region Click
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            ClosePage();
-        }
+        private void BtnBack_Click(object sender, RoutedEventArgs e) => ClosePage();
 
-        private void BtnReset_Click(object sender, RoutedEventArgs e)
-        {
-            Reset();
-        }
+        private void BtnReset_Click(object sender, RoutedEventArgs e) => Reset();
 
         private async void BtnSaveNew_Click(object sender, RoutedEventArgs e)
         {
@@ -102,15 +90,9 @@ namespace MediaTracker.Pages.MediaSeries
 
         #region PreviewKeyDown
 
-        private void Decimal_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            Functions.PreviewKeyDown(e, KeyType.Decimals);
-        }
+        private void Decimal_PreviewKeyDown(object sender, KeyEventArgs e) => Functions.PreviewKeyDown(e, KeyType.Decimals);
 
-        private void Integer_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            Functions.PreviewKeyDown(e, KeyType.Integers);
-        }
+        private void Integer_PreviewKeyDown(object sender, KeyEventArgs e) => Functions.PreviewKeyDown(e, KeyType.Integers);
 
         private void Date_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -120,20 +102,14 @@ namespace MediaTracker.Pages.MediaSeries
 
         #region GotFocus
 
-        private void Txt_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Functions.TextBoxGotFocus(sender);
-        }
+        private void Txt_GotFocus(object sender, RoutedEventArgs e) => Functions.TextBoxGotFocus(sender);
 
         #endregion GotFocus
 
         #region Page-Manipulation Methods
 
         /// <summary>Closes the Page.</summary>
-        private void ClosePage()
-        {
-            AppState.GoBack();
-        }
+        private void ClosePage() => AppState.GoBack();
 
         /// <summary>Initializes a new instance of NewSeriesPage.</summary>
         public NewSeriesPage()
@@ -142,10 +118,7 @@ namespace MediaTracker.Pages.MediaSeries
             TxtName.Focus();
         }
 
-        private void NewSeriesPage_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            AppState.CalculateScale(Grid);
-        }
+        private void NewSeriesPage_OnLoaded(object sender, RoutedEventArgs e) => AppState.CalculateScale(Grid);
 
         #endregion Page-Manipulation Methods
     }

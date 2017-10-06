@@ -8,25 +8,28 @@
       Loaded="MainPage_OnLoaded"
       Title="Media Tracker">
     <Grid x:Name="Grid" Margin="10">
-      <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
-      </Grid.ColumnDefinitions>
-      <GroupBox Grid.Column="0" Header="Television" Padding="10" Margin="0,0,10,0">
-          <StackPanel>
-            <Button x:Name="BtnTelevisionAll" Height="40" Width="175" Content="All _Television" Click="BtnTelevisionAll_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionAiring" Height="40" Width="175" Content="Currently _Airing" Click="BtnTelevisionAiring_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionHiatus" Height="40" Width="175" Content="On _Hiatus" Click="BtnTelevisionHiatus_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionEnded" Height="40" Width="175" Content="_Completed" Click="BtnTelevisionEnded_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionAddNew" Height="40" Width="175" Content="Add _New Series" Click="BtnTelevisionAddNew_Click" Margin="0,0,0,10" />
-          </StackPanel>
-      </GroupBox>
-      <GroupBox Grid.Column="1" Header="Film" Padding="5" VerticalAlignment="Top">
-          <StackPanel>
-            <Button x:Name="BtnFilmReleased" Width="125" Height="40" Content="_Released" Margin="0,0,0,10" Click="BtnFilmReleased_Click" />
-            <Button x:Name="BtnFilmUpcoming" Height="40" Content="_Upcoming" Margin="0,0,0,10" Click="BtnFilmUpcoming_Click" />
-            <Button x:Name="BtnFilmAddNew" Height="40" Content="Add New _Film" Click="BtnFilmAddNew_Click" />
-          </StackPanel>
-      </GroupBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Column="0" Header="Television" Margin="0,0,10,0">
+            <StackPanel Margin="10">
+                <Button x:Name="BtnTelevisionAll" Width="175" Content="All _Television" Click="BtnTelevisionAll_Click" Margin="0,0,0,10" />
+                <Button x:Name="BtnTelevisionAiring" Width="175" Content="Currently _Airing" Click="BtnTelevisionAiring_Click" Margin="0,0,0,10" />
+                <Button x:Name="BtnTelevisionHiatus" Width="175" Content="On _Hiatus" Click="BtnTelevisionHiatus_Click" Margin="0,0,0,10" />
+                <Button x:Name="BtnTelevisionEnded" Width="175" Content="_Completed" Click="BtnTelevisionEnded_Click" Margin="0,0,0,10" />
+                <Button x:Name="BtnTelevisionAddNew" Width="175" Content="Add _New Series" Click="BtnTelevisionAddNew_Click" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="Film" Padding="5" VerticalAlignment="Top">
+            <StackPanel>
+                <Button x:Name="BtnFilmReleased" Width="125" Content="_Released" Margin="0,0,0,10" Click="BtnFilmReleased_Click" />
+                <Button x:Name="BtnFilmUpcoming" Content="_Upcoming" Margin="0,0,0,10" Click="BtnFilmUpcoming_Click" />
+                <Button x:Name="BtnFilmAddNew" Content="Add New _Film" Click="BtnFilmAddNew_Click" />
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Page>

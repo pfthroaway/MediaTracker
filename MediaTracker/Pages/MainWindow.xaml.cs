@@ -63,14 +63,8 @@ namespace MediaTracker.Pages
             AppState.VerifyDatabaseIntegrity();
         }
 
-        private async void WindowMain_Loaded(object sender, RoutedEventArgs e)
-        {
-            await AppState.LoadAll();
-        }
+        private async void WindowMain_Loaded(object sender, RoutedEventArgs e) => await AppState.LoadAll();
 
-        private void MainFrame_OnSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            CalculateScale();
-        }
+        private void MainFrame_OnSizeChanged(object sender, SizeChangedEventArgs e) => CalculateScale();
     }
 }

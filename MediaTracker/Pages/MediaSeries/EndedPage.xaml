@@ -48,10 +48,10 @@
             </ListView.View>
         </ListView>
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,10,0">
-            <Button x:Name="BtnNewSeries" Height="40" Width="175" Content="_New Series" Click="BtnNewSeries_Click" Margin="0,0,0,10" IsDefault="True" />
-            <Button x:Name="BtnModifySeries" Height="40" Width="175" Content="_Modify Series" Click="BtnModifySeries_Click" Margin="0,0,0,10" IsEnabled="False" />
-            <Button x:Name="BtnDeleteSeries" Height="40" Width="175" Content="_Delete Series" Click="BtnDeleteSeries_Click"  Margin="0,0,0,10" IsEnabled="False" />
-            <Button x:Name="BtnBack" Height="40" Width="175" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
+            <Button x:Name="BtnNewSeries" Width="175" Content="_New Series" Click="BtnNewSeries_Click" Margin="0,0,0,10" IsDefault="True" />
+            <Button x:Name="BtnModifySeries" Width="175" Content="_Modify Series" Click="BtnModifySeries_Click" Margin="0,0,0,10" IsEnabled="False" />
+            <Button x:Name="BtnDeleteSeries" Width="175" Content="_Delete Series" Click="BtnDeleteSeries_Click"  Margin="0,0,0,10" IsEnabled="False" />
+            <Button x:Name="BtnBack" Width="175" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
         </StackPanel>
     </Grid>
 </Page>

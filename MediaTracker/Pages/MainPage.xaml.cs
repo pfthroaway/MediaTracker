@@ -11,30 +11,15 @@ namespace MediaTracker.Pages
 
         #region Television
 
-        private void BtnTelevisionAll_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new AllTelevisionPage());
-        }
+        private void BtnTelevisionAll_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new AllTelevisionPage());
 
-        private void BtnTelevisionAiring_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new AiringPage());
-        }
+        private void BtnTelevisionAiring_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new AiringPage());
 
-        private void BtnTelevisionHiatus_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new HiatusPage());
-        }
+        private void BtnTelevisionHiatus_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new HiatusPage());
 
-        private void BtnTelevisionEnded_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new EndedPage());
-        }
+        private void BtnTelevisionEnded_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new EndedPage());
 
-        private void BtnTelevisionAddNew_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new NewSeriesPage());
-        }
+        private void BtnTelevisionAddNew_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new NewSeriesPage());
 
         #endregion Television
 
@@ -56,14 +41,8 @@ namespace MediaTracker.Pages
 
         #endregion Click
 
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        public MainPage() => InitializeComponent();
 
-        private void MainPage_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            AppState.CalculateScale(Grid);
-        }
+        private void MainPage_OnLoaded(object sender, RoutedEventArgs e) => AppState.CalculateScale(Grid);
     }
 }

@@ -52,13 +52,13 @@
             </ListView.View>
         </ListView>
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,10,0">
-            <Button x:Name="BtnTelevisionAiring" Height="40" Width="175" Content="Currently _Airing" Click="BtnTelevisionAiring_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionHiatus" Height="40" Width="175" Content="On _Hiatus" Click="BtnTelevisionHiatus_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionEnded" Height="40" Width="175" Content="_Completed" Click="BtnTelevisionEnded_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnTelevisionAddNew" Height="40" Width="175" Content="Add _New Series" Click="BtnTelevisionAddNew_Click" Margin="0,0,0,10" />
-            <Button x:Name="BtnModifySeries" Height="40" Width="175" Content="_Modify Series" Click="BtnModifySeries_Click" Margin="0,0,0,10" IsEnabled="False" />
-            <Button x:Name="BtnDeleteSeries" Height="40" Width="175" Content="_Delete Series" Click="BtnDeleteSeries_Click"  Margin="0,0,0,10" IsEnabled="False" />
-            <Button x:Name="BtnBack" Height="40" Width="175" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
+            <Button x:Name="BtnTelevisionAiring" Width="175" Content="Currently _Airing" Click="BtnTelevisionAiring_Click" Margin="0,0,0,10" />
+            <Button x:Name="BtnTelevisionHiatus" Width="175" Content="On _Hiatus" Click="BtnTelevisionHiatus_Click" Margin="0,0,0,10" />
+            <Button x:Name="BtnTelevisionEnded" Width="175" Content="_Completed" Click="BtnTelevisionEnded_Click" Margin="0,0,0,10" />
+            <Button x:Name="BtnTelevisionAddNew" Width="175" Content="Add _New Series" Click="BtnTelevisionAddNew_Click" Margin="0,0,0,10" />
+            <Button x:Name="BtnModifySeries" Width="175" Content="_Modify Series" Click="BtnModifySeries_Click" Margin="0,0,0,10" IsEnabled="False" />
+            <Button x:Name="BtnDeleteSeries" Width="175" Content="_Delete Series" Click="BtnDeleteSeries_Click"  Margin="0,0,0,10" IsEnabled="False" />
+            <Button x:Name="BtnBack" Width="175" Content="_Back" Click="BtnBack_Click" IsCancel="True" />
         </StackPanel>
     </Grid>
 </Page>

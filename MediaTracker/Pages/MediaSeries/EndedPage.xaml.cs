@@ -1,4 +1,6 @@
-﻿using MediaTracker.Classes;
+﻿using Extensions;
+using Extensions.ListViewHelp;
+using MediaTracker.Classes;
 using MediaTracker.Classes.Enums;
 using MediaTracker.Classes.MediaTypes;
 using System.Collections.Generic;
@@ -20,10 +22,7 @@ namespace MediaTracker.Pages.MediaSeries
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+        protected void OnPropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 
         #endregion Data-Binding
 
@@ -46,20 +45,11 @@ namespace MediaTracker.Pages.MediaSeries
 
         #region Click Methods
 
-        private void LVSeriesColumnHeader_Click(object sender, RoutedEventArgs e)
-        {
-            _sort = Functions.ListViewColumnHeaderClick(sender, _sort, LVSeries, "#CCCCCC");
-        }
+        private void LVSeriesColumnHeader_Click(object sender, RoutedEventArgs e) => _sort = Functions.ListViewColumnHeaderClick(sender, _sort, LVSeries, "#CCCCCC");
 
-        private void BtnNewSeries_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new NewSeriesPage());
-        }
+        private void BtnNewSeries_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new NewSeriesPage());
 
-        private void BtnModifySeries_Click(object sender, RoutedEventArgs e)
-        {
-            AppState.Navigate(new ModifySeriesPage { SelectedSeries = _selectedSeries });
-        }
+        private void BtnModifySeries_Click(object sender, RoutedEventArgs e) => AppState.Navigate(new ModifySeriesPage { SelectedSeries = _selectedSeries });
 
         private async void BtnDeleteSeries_Click(object sender, RoutedEventArgs e)
         {
@@ -67,25 +57,16 @@ namespace MediaTracker.Pages.MediaSeries
                 RefreshItemsSource();
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
-        {
-            ClosePage();
-        }
+        private void BtnBack_Click(object sender, RoutedEventArgs e) => ClosePage();
 
         #endregion Click Methods
 
         #region Window-Manipulation Methods
 
         /// <summary>Closes the Page.</summary>
-        private void ClosePage()
-        {
-            AppState.GoBack();
-        }
+        private void ClosePage() => AppState.GoBack();
 
-        public EndedPage()
-        {
-            InitializeComponent();
-        }
+        public EndedPage() => InitializeComponent();
 
         private void LVSeries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
