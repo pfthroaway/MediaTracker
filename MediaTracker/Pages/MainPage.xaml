@@ -24,8 +24,8 @@
                 <Button x:Name="BtnTelevisionAddNew" Width="175" Content="Add _New Series" Click="BtnTelevisionAddNew_Click" />
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Column="1" Header="Film" Padding="5" VerticalAlignment="Top">
-            <StackPanel>
+        <GroupBox Grid.Column="1" Header="Film" VerticalAlignment="Top">
+            <StackPanel Margin="10">
                 <Button x:Name="BtnFilmReleased" Width="125" Content="_Released" Margin="0,0,0,10" Click="BtnFilmReleased_Click" />
                 <Button x:Name="BtnFilmUpcoming" Content="_Upcoming" Margin="0,0,0,10" Click="BtnFilmUpcoming_Click" />
                 <Button x:Name="BtnFilmAddNew" Content="Add New _Film" Click="BtnFilmAddNew_Click" />

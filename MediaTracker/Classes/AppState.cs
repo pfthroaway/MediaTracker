@@ -11,6 +11,7 @@ using System.Windows.Controls;
 
 namespace MediaTracker.Classes
 {
+    /// <summary>Represents the current state of the application.</summary>
     internal static class AppState
     {
         private static readonly SQLiteDatabaseInteraction DatabaseInteraction = new SQLiteDatabaseInteraction();

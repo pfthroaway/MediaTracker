@@ -165,10 +165,7 @@ namespace MediaTracker.Classes.MediaTypes
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+        public void OnPropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 
         #endregion Data-Binding
 
@@ -185,30 +182,15 @@ namespace MediaTracker.Classes.MediaTypes
                  left.Seasons == right.Seasons && left.Episodes == right.Episodes && left.Status == right.Status && left.Day == right.Day && DateTime.Equals(left.PremiereDate, right.PremiereDate) && DateTime.Equals(left.FinaleDate, right.FinaleDate);
         }
 
-        public sealed override bool Equals(object obj)
-        {
-            return Equals(this, obj as Series);
-        }
+        public sealed override bool Equals(object obj) => Equals(this, obj as Series);
 
-        public bool Equals(Series otherSeries)
-        {
-            return Equals(this, otherSeries);
-        }
+        public bool Equals(Series otherSeries) => Equals(this, otherSeries);
 
-        public static bool operator ==(Series left, Series right)
-        {
-            return Equals(left, right);
-        }
+        public static bool operator ==(Series left, Series right) => Equals(left, right);
 
-        public static bool operator !=(Series left, Series right)
-        {
-            return !Equals(left, right);
-        }
+        public static bool operator !=(Series left, Series right) => !Equals(left, right);
 
-        public sealed override int GetHashCode()
-        {
-            return base.GetHashCode() ^ 17;
-        }
+        public sealed override int GetHashCode() => base.GetHashCode() ^ 17;
 
         public sealed override string ToString() => Name;
 
@@ -249,20 +231,10 @@ namespace MediaTracker.Classes.MediaTypes
         }
 
         /// <summary>Replaces this instance of Series with another instance.</summary>
-        /// <param name="otherSeries">Instance of Series to replace this instance</param>
-        public Series(Series otherSeries)
+        /// <param name="other">Instance of Series to replace this instance</param>
+        public Series(Series other) : this(other.Name, other.PremiereDate, other.Rating, other.Seasons, other.Episodes,
+            other.Status, other.Channel, other.FinaleDate, other.Day, other.Time, other.ReturnDate)
         {
-            Name = otherSeries.Name;
-            PremiereDate = otherSeries.PremiereDate;
-            Rating = otherSeries.Rating;
-            Seasons = otherSeries.Seasons;
-            Episodes = otherSeries.Episodes;
-            Status = otherSeries.Status;
-            Channel = otherSeries.Channel;
-            FinaleDate = otherSeries.FinaleDate;
-            Day = otherSeries.Day;
-            Time = otherSeries.Time;
-            ReturnDate = otherSeries.ReturnDate;
         }
 
         #endregion Constructors

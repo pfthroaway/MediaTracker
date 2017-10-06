@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0" Width="200" Margin="0,0,10,0">
+        <StackPanel Grid.Column="0" Grid.Row="0" Width="240" Margin="0,0,10,0">
             <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap" FontSize="20" Margin="0,0,0,10" />
             <TextBlock Text="{Binding Path=PremiereDateToStringWithText}" FontSize="20" Margin="0,0,0,10" />
             <TextBlock Text="{Binding Path=RatingToString}" FontSize="20" Margin="0,0,0,10" />

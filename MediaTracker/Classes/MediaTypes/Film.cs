@@ -54,10 +54,7 @@ namespace MediaTracker.Classes.MediaTypes
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+        public void OnPropertyChanged(string property) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
 
         #endregion Data-Binding
 
@@ -70,35 +67,17 @@ namespace MediaTracker.Classes.MediaTypes
             return string.Equals(left.Name, right.Name, StringComparison.OrdinalIgnoreCase) && DateTime.Equals(left.Released, right.Released) && left.Rating == right.Rating;
         }
 
-        public sealed override bool Equals(object obj)
-        {
-            return Equals(this, obj as Film);
-        }
+        public sealed override bool Equals(object obj) => Equals(this, obj as Film);
 
-        public bool Equals(Film otherFilm)
-        {
-            return Equals(this, otherFilm);
-        }
+        public bool Equals(Film otherFilm) => Equals(this, otherFilm);
 
-        public static bool operator ==(Film left, Film right)
-        {
-            return Equals(left, right);
-        }
+        public static bool operator ==(Film left, Film right) => Equals(left, right);
 
-        public static bool operator !=(Film left, Film right)
-        {
-            return !Equals(left, right);
-        }
+        public static bool operator !=(Film left, Film right) => !Equals(left, right);
 
-        public sealed override int GetHashCode()
-        {
-            return base.GetHashCode() ^ 17;
-        }
+        public sealed override int GetHashCode() => base.GetHashCode() ^ 17;
 
-        public sealed override string ToString()
-        {
-            return $"{Name} ({Released:yyyy})";
-        }
+        public sealed override string ToString() => $"{Name} ({Released:yyyy})";
 
         #endregion Override Operators
 
@@ -121,12 +100,9 @@ namespace MediaTracker.Classes.MediaTypes
         }
 
         /// <summary>Replaces this instance of Film with another instance.</summary>
-        /// <param name="otherFilm">Instance of Film to replace this instance</param>
-        public Film(Film otherFilm)
+        /// <param name="other">Instance of Film to replace this instance</param>
+        public Film(Film other) : this(other.Name, other.Released, other.Rating)
         {
-            Name = otherFilm.Name;
-            Released = otherFilm.Released;
-            Rating = otherFilm.Rating;
         }
 
         #endregion Constructors

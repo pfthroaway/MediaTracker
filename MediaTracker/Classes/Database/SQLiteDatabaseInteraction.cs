@@ -22,11 +22,8 @@ namespace MediaTracker.Classes.Database
         #region Database Interaction
 
         /// <summary>Verifies that the requested database exists and that its file size is greater than zero. If not, it extracts the embedded database file to the local output folder.</summary>
-        public void VerifyDatabaseIntegrity()
-        {
-            Functions.VerifyFileIntegrity(
+        public void VerifyDatabaseIntegrity() => Functions.VerifyFileIntegrity(
               Assembly.GetExecutingAssembly().GetManifestResourceStream($"MediaTracker.{_DATABASENAME}"), _DATABASENAME);
-        }
 
         #endregion Database Interaction
 
