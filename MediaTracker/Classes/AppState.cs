@@ -39,10 +39,7 @@ namespace MediaTracker.Classes
 
         /// <summary>Navigates to selected Page.</summary>
         /// <param name="newPage">Page to navigate to.</param>
-        internal static void Navigate(Page newPage)
-        {
-            MainWindow.MainFrame.Navigate(newPage);
-        }
+        internal static void Navigate(Page newPage) => MainWindow.MainFrame.Navigate(newPage);
 
         /// <summary>Navigates to the previous Page.</summary>
         internal static void GoBack()
@@ -56,10 +53,7 @@ namespace MediaTracker.Classes
         #region Database Interaction
 
         /// <summary>Verifies that the requested database exists and that its file size is greater than zero. If not, it extracts the embedded database file to the local output folder.</summary>
-        public static void VerifyDatabaseIntegrity()
-        {
-            DatabaseInteraction.VerifyDatabaseIntegrity();
-        }
+        public static void VerifyDatabaseIntegrity() => DatabaseInteraction.VerifyDatabaseIntegrity();
 
         #endregion Database Interaction
 
@@ -89,17 +83,11 @@ namespace MediaTracker.Classes
 
         #region Load
 
-        internal static async Task LoadAll()
-        {
-            await LoadSeries();
-        }
+        internal static async Task LoadAll() => await LoadSeries();
 
         /// <summary>Loads all Series from the database.</summary>
         /// <returns>All Series</returns>
-        public static async Task LoadSeries()
-        {
-            AllSeries = await DatabaseInteraction.LoadSeries();
-        }
+        public static async Task LoadSeries() => AllSeries = await DatabaseInteraction.LoadSeries();
 
         #endregion Load
 
@@ -145,13 +133,10 @@ namespace MediaTracker.Classes
         /// <summary>Displays a new Notification in a thread-safe way.</summary>
         /// <param name="message">Message to be displayed</param>
         /// <param name="title">Title of the Notification window</param>
-        internal static void DisplayNotification(string message, string title)
-        {
-            Application.Current.Dispatcher.Invoke(delegate
-            {
-                new Notification(message, title, NotificationButtons.OK, MainWindow).ShowDialog();
-            });
-        }
+        internal static void DisplayNotification(string message, string title) => Application.Current.Dispatcher.Invoke(delegate
+                                                                                {
+                                                                                    new Notification(message, title, NotificationButtons.OK, MainWindow).ShowDialog();
+                                                                                });
 
         /// <summary>Displays a new Notification in a thread-safe way and retrieves a boolean result upon its closing.</summary>
         /// <param name="message">Message to be displayed</param>

@@ -18,10 +18,7 @@ namespace MediaTracker.Pages.MediaSeries
         internal Series SelectedSeries { get; set; }
 
         /// <summary>Checks whether the Save buttons should be enabled.</summary>
-        private void CheckButton()
-        {
-            BtnSave.IsEnabled = TxtName.Text.Length > 0 && DatePremiere.Text.Length > 0 && TxtRating.Text.Length > 0 && TxtSeasons.Text.Length > 0 && TxtEpisodes.Text.Length > 0 && CmbStatus.SelectedIndex >= 0 && (TxtName.Text != SelectedSeries.Name || DatePremiere.Text != SelectedSeries.PremiereDateToString || DecimalHelper.Parse(TxtRating.Text) != SelectedSeries.Rating || Int32Helper.Parse(TxtSeasons.Text) != SelectedSeries.Seasons || Int32Helper.Parse(TxtEpisodes.Text) != SelectedSeries.Episodes || (SeriesStatus)CmbStatus.SelectedIndex != SelectedSeries.Status);
-        }
+        private void CheckButton() => BtnSave.IsEnabled = TxtName.Text.Length > 0 && DatePremiere.Text.Length > 0 && TxtRating.Text.Length > 0 && TxtSeasons.Text.Length > 0 && TxtEpisodes.Text.Length > 0 && CmbStatus.SelectedIndex >= 0 && (TxtName.Text != SelectedSeries.Name || DatePremiere.Text != SelectedSeries.PremiereDateToString || DecimalHelper.Parse(TxtRating.Text) != SelectedSeries.Rating || Int32Helper.Parse(TxtSeasons.Text) != SelectedSeries.Seasons || Int32Helper.Parse(TxtEpisodes.Text) != SelectedSeries.Episodes || (SeriesStatus)CmbStatus.SelectedIndex != SelectedSeries.Status);
 
         /// <summary>Resets all controls to empty.</summary>
         private void Reset()
