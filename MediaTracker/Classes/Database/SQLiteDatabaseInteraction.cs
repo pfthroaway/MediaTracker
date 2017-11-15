@@ -52,7 +52,7 @@ namespace MediaTracker.Classes.Database
         public async Task<List<Series>> LoadSeries()
         {
             List<Series> allSeries = new List<Series>();
-            DataSet ds = await SQLite.FillDataSet("SELECT * FROM Series", _con);
+            DataSet ds = await SQLite.FillDataSet(_con, "SELECT * FROM Series");
 
             if (ds.Tables[0].Rows.Count > 0)
             {
